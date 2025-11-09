@@ -1,0 +1,12 @@
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Domain/bin/Debug/net9.0/Domain.deps.json
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Domain/bin/Debug/net9.0/Domain.dll
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Domain/bin/Debug/net9.0/Domain.pdb
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Domain/obj/Debug/net9.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Domain/obj/Debug/net9.0/Domain.AssemblyInfoInputs.cache
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Domain/obj/Debug/net9.0/Domain.AssemblyInfo.cs
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Domain/obj/Debug/net9.0/Domain.csproj.CoreCompileInputs.cache
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Domain/obj/Debug/net9.0/Domain.sourcelink.json
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Domain/obj/Debug/net9.0/Domain.dll
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Domain/obj/Debug/net9.0/refint/Domain.dll
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Domain/obj/Debug/net9.0/Domain.pdb
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Domain/obj/Debug/net9.0/ref/Domain.dll

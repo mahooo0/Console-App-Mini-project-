@@ -1,0 +1,16 @@
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Repository/bin/Debug/net9.0/Repository.deps.json
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Repository/bin/Debug/net9.0/Repository.dll
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Repository/bin/Debug/net9.0/Repository.pdb
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Repository/bin/Debug/net9.0/Domain.dll
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Repository/bin/Debug/net9.0/Domain.pdb
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Repository/obj/Debug/net9.0/Repository.csproj.AssemblyReference.cache
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Repository/obj/Debug/net9.0/Repository.GeneratedMSBuildEditorConfig.editorconfig
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Repository/obj/Debug/net9.0/Repository.AssemblyInfoInputs.cache
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Repository/obj/Debug/net9.0/Repository.AssemblyInfo.cs
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Repository/obj/Debug/net9.0/Repository.csproj.CoreCompileInputs.cache
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Repository/obj/Debug/net9.0/Repository.sourcelink.json
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Repository/obj/Debug/net9.0/Repository.csproj.Up2Date
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Repository/obj/Debug/net9.0/Repository.dll
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Repository/obj/Debug/net9.0/refint/Repository.dll
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Repository/obj/Debug/net9.0/Repository.pdb
+/Users/muhemmedibrahimov/lernings/net/Console-App-Mini-project-/Repository/obj/Debug/net9.0/ref/Repository.dll

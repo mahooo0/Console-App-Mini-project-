@@ -1,2 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Service.Helper;
+namespace Console_App;
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Clear();
+        Helper.Print("Hello, World!", ConsoleColor.Red);
+    }
+}
