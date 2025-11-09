@@ -12,7 +12,7 @@ class Program
         Helper.Print(" Choose an option:", ConsoleColor.Green);
         Helper.Print(" 1.Students Management", ConsoleColor.Yellow);
         Helper.Print(" 2.Groups Management", ConsoleColor.Yellow);
-        choice = int.Parse(Console.ReadLine());
+        choice = Helper.GetIntInput();
         switch (choice)
         {
             case 1:

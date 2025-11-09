@@ -35,7 +35,10 @@ public class StudentsService : IStudentsService
     {
         return _studentsRepository.GetById(predicate);
     }
-    
+    public List<Student> GetAll(Predicate<Student> predicate)
+    {
+        return _studentsRepository.GetAll(predicate);
+    }
     public List<Student> GetAll()
     {
         return _studentsRepository.GetAll();

@@ -28,7 +28,7 @@ public class StudentMenegment
         Helper.Print(" 8. Get all students", ConsoleColor.Yellow);
         Helper.Print(" 9. Search a student by name or surname", ConsoleColor.Yellow);
         Helper.Print(" 10. Exit", ConsoleColor.Yellow);
-        choice = int.Parse(Console.ReadLine());
+        choice = Helper.GetIntInput();
         switch (choice)
         {
             case 1:
@@ -38,10 +38,12 @@ public class StudentMenegment
                     Console.WriteLine("Enter student surname:");
                     string surname = Console.ReadLine();
                     Console.WriteLine("Enter student age:");
-                    int age = int.Parse(Console.ReadLine());
+                    int age = Helper.GetIntInput();
                     Student student = new Student { Name = name, Surname = surname, Age = age };
                     studentsService.Add(student);
+                    Console.Clear();
                     Helper.Print("Student added successfully!", ConsoleColor.Green);
+                    Helper.ShowObject(student);
                     Console.ReadKey();
                     Console.Clear();
 
@@ -50,16 +52,18 @@ public class StudentMenegment
             case 2:
                 {
                     Console.WriteLine("Enter student id:");
-                    int id = int.Parse(Console.ReadLine());
+                    int id = Helper.GetIntInput();
                     Console.WriteLine("Enter student name:");
                     string name = Console.ReadLine();
                     Console.WriteLine("Enter student surname:");
                     string surname = Console.ReadLine();
                     Console.WriteLine("Enter student age:");
-                    int age = int.Parse(Console.ReadLine());
-                    Student student = new Student { Id = id, Name = name, Surname = surname, Age = age };
+                    int age = Helper.GetIntInput();
+                    Student student = new Student {  Name = name, Surname = surname, Age = age };
                     studentsService.Update(id, student);
+                    Console.Clear();
                     Helper.Print("Student updated successfully!", ConsoleColor.Green);
+                    Helper.ShowObject(student);
                     Console.ReadKey();
                     Console.Clear();
                     break;
@@ -69,6 +73,7 @@ public class StudentMenegment
                     Console.WriteLine("Enter student id:");
                     int id = int.Parse(Console.ReadLine());
                     studentsService.Delete(id);
+                    Console.Clear();
                     Helper.Print("Student deleted successfully!", ConsoleColor.Green);
                     Console.ReadKey();
                     Console.Clear();
@@ -79,6 +84,7 @@ public class StudentMenegment
                     Console.WriteLine("Enter student id:");
                     int id = int.Parse(Console.ReadLine());
                     Student student = studentsService.Get(s => s.Id == id);
+                    Console.Clear();
                     Helper.ShowObject(student);
                     Console.ReadKey();
                     Console.Clear();
@@ -89,6 +95,7 @@ public class StudentMenegment
                     Console.WriteLine("Enter student name:");
                     string name = Console.ReadLine();
                     Student student = studentsService.Get(s => s.Name == name);
+                    Console.Clear();
                     Helper.ShowObject(student);
                     Console.ReadKey();
                     Console.Clear();
@@ -99,6 +106,7 @@ public class StudentMenegment
                     Console.WriteLine("Enter student age:");
                     int age = int.Parse(Console.ReadLine());
                     Student student = studentsService.Get(s => s.Age == age);
+                    Console.Clear();
                     Helper.ShowObject(student);
                     Console.ReadKey();
                     Console.Clear();
@@ -109,6 +117,7 @@ public class StudentMenegment
                     Console.WriteLine("Enter group id:");
                     int groupId = int.Parse(Console.ReadLine());
                     Student student = studentsService.Get(s => s.GroupId == groupId);
+                    Console.Clear();
                     Helper.ShowObject(student);
                     Console.ReadKey();
                     Console.Clear();
@@ -117,6 +126,7 @@ public class StudentMenegment
             case 8:
                 {
                     List<Student> students = studentsService.GetAll();
+                    Console.Clear();
                     Helper.ShowObjectsInTable(students);
                     Console.ReadKey();
                     Console.Clear();
@@ -126,8 +136,9 @@ public class StudentMenegment
                 {
                     Console.WriteLine("Enter student name or surname:");
                     string nameOrSurname = Console.ReadLine();
-                    Student student = studentsService.Get(x => x.Name == nameOrSurname || x.Surname == nameOrSurname);
-                    Helper.ShowObject(student);
+                    List<Student> students = studentsService.GetAll (x => x.Name == nameOrSurname || x.Surname == nameOrSurname);
+                    Console.Clear();
+                    Helper.ShowObjectsInTable(students);
                     Console.ReadKey();
                     Console.Clear();
                     break;

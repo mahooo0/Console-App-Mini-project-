@@ -9,4 +9,5 @@ public interface IStudentsService
     void Delete(int id);
     Student Get(Predicate<Student> predicate);
     List<Student> GetAll();
+    List<Student> GetAll(Predicate<Student> predicate);
 }

@@ -32,6 +32,10 @@ public class StudentsRepository : IRepository<Student>
     {
         return _students.Find(predicate);
     }
+    public List<Student> GetAll(Predicate<Student> predicate)
+    {
+        return _students.FindAll(predicate);
+    }
     public List<Student> GetAll()
     {
         return _students;

@@ -15,12 +15,13 @@ public static class Helper
     {
         if (obj == null)
         {
-            Print("Объект не найден!", ConsoleColor.Red);
+            Print("Object not found!", ConsoleColor.Red);
             return;
         }
 
         var properties = typeof(T).GetProperties()
-            .OrderBy(p => p.Name == "Id" ? 0 : 1)
+            .OrderBy(p => p.Name == "Id" ? 0 : 
+                         (p.Name == "CreatedAt" || p.Name == "UpdatedAt") ? 2 : 1)
             .ThenBy(p => p.Name)
             .ToArray();
         var headers = properties.Select(p => p.Name).ToArray();
@@ -55,12 +56,13 @@ public static class Helper
     {
         if (objects == null || objects.Count == 0)
         {
-            Print("Нет данных для отображения!", ConsoleColor.Red);
+            Print("No data to display!", ConsoleColor.Red);
             return;
         }
 
         var properties = typeof(T).GetProperties()
-            .OrderBy(p => p.Name == "Id" ? 0 : 1)
+            .OrderBy(p => p.Name == "Id" ? 0 : 
+                         (p.Name == "CreatedAt" || p.Name == "UpdatedAt") ? 2 : 1)
             .ThenBy(p => p.Name)
             .ToArray();
         var headers = properties.Select(p => p.Name).ToArray();
