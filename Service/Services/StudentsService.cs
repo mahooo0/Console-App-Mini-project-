@@ -6,8 +6,18 @@ namespace Service.Services;
 
 public class StudentsService : IStudentsService
 {
-    private readonly StudentsRepository _studentsRepository = new StudentsRepository();
+    private readonly StudentsRepository _studentsRepository;
     static int Count = 0;
+    
+    public StudentsService()
+    {
+        _studentsRepository = new StudentsRepository();
+    }
+    
+    public StudentsService(StudentsRepository studentsRepository)
+    {
+        _studentsRepository = studentsRepository;
+    }
     
     public Student Add(Student student)
     {

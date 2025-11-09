@@ -1,17 +1,24 @@
 using Service.Helper;
 using Service.Services;
-using Repository.Repositories;
 using Domain.Models;
 
 namespace Console_App;
 
 public class StudentMenegment
 {
+    private readonly StudentsService studentsService;
+    private readonly GroupService groupService;
+    
+    public StudentMenegment(StudentsService studentsService, GroupService groupService)
+    {
+        this.studentsService = studentsService;
+        this.groupService = groupService;
+    }
+    
     public void StudentManagementMenu()
     {
         int choice;
         bool isRunning = true;
-        StudentsService studentsService = new StudentsService();
 
         while (isRunning){
 
@@ -27,7 +34,8 @@ public class StudentMenegment
         Helper.Print(" 7. Get students by group id", ConsoleColor.Yellow);
         Helper.Print(" 8. Get all students", ConsoleColor.Yellow);
         Helper.Print(" 9. Search a student by name or surname", ConsoleColor.Yellow);
-        Helper.Print(" 10. Exit", ConsoleColor.Yellow);
+        Helper.Print(" 10. Add student to group", ConsoleColor.Yellow);
+        Helper.Print(" 11. Exit", ConsoleColor.Yellow);
         choice = Helper.GetIntInput();
         switch (choice)
         {
@@ -136,7 +144,7 @@ public class StudentMenegment
                 {
                     Console.WriteLine("Enter student name or surname:");
                     string nameOrSurname = Console.ReadLine();
-                    List<Student> students = studentsService.GetAll (x => x.Name == nameOrSurname || x.Surname == nameOrSurname);
+                    List<Student> students = studentsService.GetAll(x => x.Name == nameOrSurname || x.Surname == nameOrSurname);
                     Console.Clear();
                     Helper.ShowObjectsInTable(students);
                     Console.ReadKey();
@@ -144,6 +152,18 @@ public class StudentMenegment
                     break;
                 }
             case 10:
+                {
+                    Console.WriteLine("Enter student id:");
+                    int studentId = Helper.GetIntInput();
+                    Console.WriteLine("Enter group id:");
+                    int groupId = Helper.GetIntInput();
+                    groupService.AddStudentToGroup(groupId, studentId, studentsService);
+                    Helper.Print("Student added to group successfully!", ConsoleColor.Green);
+                    Console.ReadKey();
+                    Console.Clear();
+                    break;
+                }
+            case 11:
                 isRunning = false;
                 Console.Clear();
                 break;
