@@ -9,5 +9,4 @@ public interface IStudentsService
     void Delete(int id);
     Student Get(Predicate<Student> predicate);
     List<Student> GetAll();
-    Student Patch(Predicate<Student> predicate, Dictionary<string, object> data);
 }

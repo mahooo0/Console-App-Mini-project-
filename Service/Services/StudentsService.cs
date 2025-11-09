@@ -6,14 +6,9 @@ namespace Service.Services;
 
 public class StudentsService : IStudentsService
 {
-    private readonly StudentsRepository _studentsRepository;
+    private readonly StudentsRepository _studentsRepository = new StudentsRepository();
     static int Count = 0;
     
-    public StudentsService(StudentsRepository studentsRepository)
-    {
-        _studentsRepository = studentsRepository;
-    }
-
     public Student Add(Student student)
     {
         Count++;
@@ -26,26 +21,25 @@ public class StudentsService : IStudentsService
     
     public Student Update(int id, Student student)
     {
-        throw new NotImplementedException();
+        student.UpdatedAt = DateTime.Now;
+        _studentsRepository.Update(student);
+        return student;
     }
     
     public void Delete(int id)
     {
-        throw new NotImplementedException();
+        _studentsRepository.Delete(id);
     }
     
     public Student Get(Predicate<Student> predicate)
     {
-        throw new NotImplementedException();
+        return _studentsRepository.GetById(predicate);
     }
     
     public List<Student> GetAll()
     {
-        throw new NotImplementedException();
+        return _studentsRepository.GetAll();
     }
     
-    public Student Patch(Predicate<Student> predicate, Dictionary<string, object> data)
-    {
-        throw new NotImplementedException();
-    }
+ 
 }

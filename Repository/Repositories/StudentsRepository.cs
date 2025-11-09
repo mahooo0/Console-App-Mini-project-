@@ -5,28 +5,36 @@ namespace Repository.Repositories;
 
 public class StudentsRepository : IRepository<Student>
 {
+    private readonly List<Student> _students = new List<Student>();
     public void Add(Student entity)
     {
-        throw new NotImplementedException();
+        _students.Add(entity);
     }
     public void Update(Student entity)
     {
-        throw new NotImplementedException();
+        var student = _students.FirstOrDefault(x => x.Id == entity.Id);
+        if (student != null)
+        {
+            student.Name = entity.Name;
+            student.Surname = entity.Surname;
+            student.Age = entity.Age;
+        }
     }
     public void Delete(int id)
     {
-        throw new NotImplementedException();
+        var student = _students.FirstOrDefault(x => x.Id == id);
+        if (student != null)
+        {
+            _students.Remove(student);
+        }
     }
     public Student GetById(Predicate<Student> predicate)
     {
-        throw new NotImplementedException();
+        return _students.Find(predicate);
     }
     public List<Student> GetAll()
     {
-        throw new NotImplementedException();
+        return _students;
     }
-    public void Patch(Predicate<Student> predicate, Dictionary<string, object> data)
-    {
-        throw new NotImplementedException();
-    }
+
 }
