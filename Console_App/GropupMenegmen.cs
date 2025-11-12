@@ -60,6 +60,14 @@ public class GropupMenegmen
                     {
                         Console.WriteLine("Enter group id:");
                         int id = Helper.GetIntInput();
+                        Group group1 = groupService.GetById(id);
+                        if (group1 == null)
+                        {
+                            Helper.Print("Group not found!", ConsoleColor.Red);
+                            Console.ReadKey();
+                            Console.Clear();
+                            break;
+                        }
                         Console.WriteLine("Enter group name:");
                         string name = Console.ReadLine();
                         Console.WriteLine("Enter group teacher:");
@@ -70,7 +78,7 @@ public class GropupMenegmen
                         groupService.Update(id, group);
                         Helper.Print("Group updated successfully!", ConsoleColor.Green);
                         Console.Clear();
-                            Helper.ShowObject(group);
+                        Helper.ShowObject(group);
                         Console.ReadKey();
                         Console.Clear();
                         break;
@@ -79,6 +87,14 @@ public class GropupMenegmen
                     {
                         Console.WriteLine("Enter group id:");
                         int id = Helper.GetIntInput();
+                        Group group2 = groupService.GetById(id);
+                        if (group2 == null)
+                        {
+                            Helper.Print("Group not found!", ConsoleColor.Red);
+                            Console.ReadKey();
+                            Console.Clear();
+                            break;
+                        }
                         groupService.Delete(id);
                         Helper.Print("Group deleted successfully!", ConsoleColor.Green);
                         Console.ReadKey();
@@ -168,8 +184,24 @@ public class GropupMenegmen
                     {
                         Console.WriteLine("Enter group id:");
                         int groupId = Helper.GetIntInput();
+                        Group group1 = groupService.GetById(groupId);
+                        if (group1 == null)
+                        {
+                            Helper.Print("Group not found!", ConsoleColor.Red);
+                            Console.ReadKey();
+                            Console.Clear();
+                            break;
+                        }
                         Console.WriteLine("Enter student id:");
                         int studentId = Helper.GetIntInput();
+                        Student student1 = studentsService.Get(s => s.Id == studentId);
+                        if (student1 == null)
+                        {
+                            Helper.Print("Student not found!", ConsoleColor.Red);
+                            Console.ReadKey();
+                            Console.Clear();
+                            break;
+                        }
                         groupService.AddStudentToGroup(groupId, studentId, studentsService);
                         Console.Clear();
                         Helper.Print("Student added to group successfully!", ConsoleColor.Green);

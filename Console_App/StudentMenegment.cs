@@ -62,6 +62,14 @@ public class StudentMenegment
                     Console.WriteLine("Enter student id:");
                     int id = Helper.GetIntInput();
                     Console.WriteLine("Enter student name:");
+                    Student student1 = studentsService.Get(s => s.Id == id);
+                    if (student1 == null)
+                    {
+                        Helper.Print("Student not found!", ConsoleColor.Red);
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
+                    }
                     string name = Console.ReadLine();
                     Console.WriteLine("Enter student surname:");
                     string surname = Console.ReadLine();
@@ -81,6 +89,14 @@ public class StudentMenegment
                     Console.WriteLine("Enter student id:");
                     int id = int.Parse(Console.ReadLine());
                     studentsService.Delete(id);
+                    Student student1 = studentsService.Get(s => s.Id == id);
+                    if (student1 == null)
+                    {
+                        Helper.Print("Student not found!", ConsoleColor.Red);
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
+                    }
                     Console.Clear();
                     Helper.Print("Student deleted successfully!", ConsoleColor.Green);
                     Console.ReadKey();
@@ -91,6 +107,14 @@ public class StudentMenegment
                 {
                     Console.WriteLine("Enter student id:");
                     int id = int.Parse(Console.ReadLine());
+                    Student student1 = studentsService.Get(s => s.Id == id);
+                    if (student1 == null)
+                    {
+                        Helper.Print("Student not found!", ConsoleColor.Red);
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
+                    }
                     Student student = studentsService.Get(s => s.Id == id);
                     Console.Clear();
                     Helper.ShowObject(student);
@@ -155,8 +179,24 @@ public class StudentMenegment
                 {
                     Console.WriteLine("Enter student id:");
                     int studentId = Helper.GetIntInput();
+                    Student student1 = studentsService.Get(s => s.Id == studentId);
+                    if (student1 == null)
+                    {
+                        Helper.Print("Student not found!", ConsoleColor.Red);
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
+                    }
                     Console.WriteLine("Enter group id:");
                     int groupId = Helper.GetIntInput();
+                    Group group1 = groupService.GetById(groupId);
+                    if (group1 == null)
+                    {
+                        Helper.Print("Group not found!", ConsoleColor.Red);
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
+                    }
                     groupService.AddStudentToGroup(groupId, studentId, studentsService);
                     Helper.Print("Student added to group successfully!", ConsoleColor.Green);
                     Console.ReadKey();
