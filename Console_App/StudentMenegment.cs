@@ -87,7 +87,7 @@ public class StudentMenegment
             case 3:
                 {
                     Console.WriteLine("Enter student id:");
-                    int id = int.Parse(Console.ReadLine());
+                    int id = Helper.GetIntInput();
                     studentsService.Delete(id);
                     Student student1 = studentsService.Get(s => s.Id == id);
                     if (student1 == null)
@@ -106,7 +106,7 @@ public class StudentMenegment
             case 4:
                 {
                     Console.WriteLine("Enter student id:");
-                    int id = int.Parse(Console.ReadLine());
+                    int id = Helper.GetIntInput();
                     Student student1 = studentsService.Get(s => s.Id == id);
                     if (student1 == null)
                     {
@@ -136,7 +136,7 @@ public class StudentMenegment
             case 6:
                 {
                     Console.WriteLine("Enter student age:");
-                    int age = int.Parse(Console.ReadLine());
+                    int age = Helper.GetIntInput();
                     Student student = studentsService.Get(s => s.Age == age);
                     Console.Clear();
                     Helper.ShowObject(student);
@@ -147,7 +147,7 @@ public class StudentMenegment
             case 7:
                 {
                     Console.WriteLine("Enter group id:");
-                    int groupId = int.Parse(Console.ReadLine());
+                    int groupId = Helper.GetIntInput();
                     Student student = studentsService.Get(s => s.GroupId == groupId);
                     Console.Clear();
                     Helper.ShowObject(student);
