@@ -84,7 +84,6 @@ public class StudentMenegment
                 {
                     Console.WriteLine("Enter student id:");
                     int id = Helper.GetIntInput();
-                    studentsService.Delete(id);
                     Student student1 = studentsService.Get(s => s.Id == id);
                     if (student1 == null)
                     {
@@ -92,7 +91,8 @@ public class StudentMenegment
                         Console.ReadKey();
                         Console.Clear();
                         break;
-                    }
+                    }                    studentsService.Delete(id);
+
                     Console.Clear();
                     Helper.Print("Student deleted successfully!", ConsoleColor.Green);
                     Console.ReadKey();
