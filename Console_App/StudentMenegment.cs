@@ -41,10 +41,8 @@ public class StudentMenegment
         {
             case 1:
                 {
-                    Console.WriteLine("Enter student name:");
-                    string name = Console.ReadLine();
-                    Console.WriteLine("Enter student surname:");
-                    string surname = Console.ReadLine();
+                    string name = Helper.GetStringInput("Enter student name:");
+                    string surname = Helper.GetStringInput("Enter student surname:");
                     Console.WriteLine("Enter student age:");
                     int age = Helper.GetIntInput();
                     Student student = new Student { Name = name, Surname = surname, Age = age };
@@ -61,7 +59,6 @@ public class StudentMenegment
                 {
                     Console.WriteLine("Enter student id:");
                     int id = Helper.GetIntInput();
-                    Console.WriteLine("Enter student name:");
                     Student student1 = studentsService.Get(s => s.Id == id);
                     if (student1 == null)
                     {
@@ -70,9 +67,8 @@ public class StudentMenegment
                         Console.Clear();
                         break;
                     }
-                    string name = Console.ReadLine();
-                    Console.WriteLine("Enter student surname:");
-                    string surname = Console.ReadLine();
+                    string name = Helper.GetStringInput("Enter student name:");
+                    string surname = Helper.GetStringInput("Enter student surname:");
                     Console.WriteLine("Enter student age:");
                     int age = Helper.GetIntInput();
                     Student student = new Student {  Name = name, Surname = surname, Age = age };
@@ -124,8 +120,7 @@ public class StudentMenegment
                 }
             case 5:
                 {
-                    Console.WriteLine("Enter student name:");
-                    string name = Console.ReadLine();
+                    string name = Helper.GetStringInput("Enter student name:");
                     Student student = studentsService.Get(s => s.Name == name);
                     Console.Clear();
                     Helper.ShowObject(student);
@@ -166,8 +161,7 @@ public class StudentMenegment
                 }
             case 9:
                 {
-                    Console.WriteLine("Enter student name or surname:");
-                    string nameOrSurname = Console.ReadLine();
+                    string nameOrSurname = Helper.GetStringInput("Enter student name or surname:");
                     List<Student> students = studentsService.GetAll(x => x.Name == nameOrSurname || x.Surname == nameOrSurname);
                     Console.Clear();
                     Helper.ShowObjectsInTable(students);

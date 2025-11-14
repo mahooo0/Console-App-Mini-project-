@@ -41,10 +41,8 @@ public class GropupMenegmen
             {
                 case 1:
                     {
-                        Console.WriteLine("Enter group name:");
-                        string name = Console.ReadLine();
-                        Console.WriteLine("Enter group teacher:");
-                        string teacher = Console.ReadLine();
+                        string name = Helper.GetStringInput("Enter group name:");
+                        string teacher = Helper.GetStringInput("Enter group teacher:");
                         Console.WriteLine("Enter group room:");
                         int room = Helper.GetIntInput();
                         Group group = new Group { Name = name, Teacher = teacher, Room = room };
@@ -68,10 +66,8 @@ public class GropupMenegmen
                             Console.Clear();
                             break;
                         }
-                        Console.WriteLine("Enter group name:");
-                        string name = Console.ReadLine();
-                        Console.WriteLine("Enter group teacher:");
-                        string teacher = Console.ReadLine();
+                        string name = Helper.GetStringInput("Enter group name:");
+                        string teacher = Helper.GetStringInput("Enter group teacher:");
                         Console.WriteLine("Enter group room:");
                         int room = Helper.GetIntInput();
                         Group group = new Group { Id = id, Name = name, Teacher = teacher, Room = room };
@@ -114,10 +110,9 @@ public class GropupMenegmen
                     }
                 case 5:
                     {
-                        Console.WriteLine("Enter group name:");
-                        string name = Console.ReadLine();
+                        string name = Helper.GetStringInput("Enter group name:");
                         var groups = groupService.GetAll(g => g.Name == name);
-                                                    Console.Clear();
+                        Console.Clear();
 
                         if (groups.Count > 0)
                         {
@@ -131,8 +126,7 @@ public class GropupMenegmen
                     }
                 case 6:
                     {
-                        Console.WriteLine("Enter group teacher:");
-                        string teacher = Console.ReadLine();
+                        string teacher = Helper.GetStringInput("Enter group teacher:");
                         var groups = groupService.GetAll(g => g.Teacher == teacher);
                         Console.Clear();
                         if (groups.Count > 0)
@@ -159,8 +153,7 @@ public class GropupMenegmen
                     }
                 case 8:
                     {
-                        Console.WriteLine("Enter group name or teacher:");
-                        string searchTerm = Console.ReadLine();
+                        string searchTerm = Helper.GetStringInput("Enter group name or teacher:");
                         var groups = groupService.GetAll(g => g.Name == searchTerm || g.Teacher == searchTerm);
                         Console.Clear();
                         if (groups.Count > 0)

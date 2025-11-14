@@ -114,4 +114,23 @@ public static class Helper
         return input;
        
     }
+
+    public static string GetStringInput(string prompt = "")
+    {
+        if (!string.IsNullOrEmpty(prompt))
+        {
+            Console.WriteLine(prompt);
+        }
+
+        string? input;
+        while (true)
+        {
+            input = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(input))
+            {
+                return input;
+            }
+            Print("Input cannot be empty. Please enter a valid value.", ConsoleColor.Red);
+        }
+    }
 }
