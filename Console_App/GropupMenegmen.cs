@@ -66,10 +66,9 @@ public class GropupMenegmen
                             Console.Clear();
                             break;
                         }
-                        string name = Helper.GetStringInput("Enter group name:");
-                        string teacher = Helper.GetStringInput("Enter group teacher:");
-                        Console.WriteLine("Enter group room:");
-                        int room = Helper.GetIntInput();
+                        string name = Helper.GetOptionalStringInput("Enter group name", group1.Name);
+                        string teacher = Helper.GetOptionalStringInput("Enter group teacher", group1.Teacher);
+                        int room = Helper.GetOptionalIntInput("Enter group room", group1.Room);
                         Group group = new Group { Id = id, Name = name, Teacher = teacher, Room = room };
                         groupService.Update(id, group);
                         Helper.Print("Group updated successfully!", ConsoleColor.Green);

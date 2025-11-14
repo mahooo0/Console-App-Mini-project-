@@ -133,4 +133,46 @@ public static class Helper
             Print("Input cannot be empty. Please enter a valid value.", ConsoleColor.Red);
         }
     }
+
+    public static string GetOptionalStringInput(string prompt, string currentValue)
+    {
+        if (!string.IsNullOrEmpty(prompt))
+        {
+            Console.WriteLine($"{prompt} (current: {currentValue}, press Enter to keep):");
+        }
+
+        string? input = Console.ReadLine();
+        
+        if (string.IsNullOrWhiteSpace(input))
+        {
+            return currentValue;
+        }
+        
+        return input;
+    }
+
+    public static int GetOptionalIntInput(string prompt, int currentValue)
+    {
+        Console.WriteLine($"{prompt} (current: {currentValue}, press Enter to keep):");
+        string? input = Console.ReadLine();
+        
+        if (string.IsNullOrWhiteSpace(input))
+        {
+            return currentValue;
+        }
+        
+        int result;
+        while (!int.TryParse(input, out result))
+        {
+            Print("Invalid input. Please enter a valid integer or press Enter to keep current value.", ConsoleColor.Red);
+            input = Console.ReadLine();
+            
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                return currentValue;
+            }
+        }
+        
+        return result;
+    }
 }

@@ -67,10 +67,9 @@ public class StudentMenegment
                         Console.Clear();
                         break;
                     }
-                    string name = Helper.GetStringInput("Enter student name:");
-                    string surname = Helper.GetStringInput("Enter student surname:");
-                    Console.WriteLine("Enter student age:");
-                    int age = Helper.GetIntInput();
+                    string name = Helper.GetOptionalStringInput("Enter student name", student1.Name);
+                    string surname = Helper.GetOptionalStringInput("Enter student surname", student1.Surname);
+                    int age = Helper.GetOptionalIntInput("Enter student age", student1.Age);
                     Student student = new Student {  Name = name, Surname = surname, Age = age };
                     studentsService.Update(id, student);
                     Console.Clear();
